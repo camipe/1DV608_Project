@@ -1,0 +1,19 @@
+{
+    "name": "micaelpersson/bildflode",
+    "description": "Project for course 1DV608.",
+    "require-dev": {
+        "phpunit/phpunit": "~5.0"
+    },
+    "authors": [
+        {
+            "name": "Micael Persson",
+            "email": "micael.c.persson@gmail.com"
+        }
+    ],
+    "autoload": {
+    "psr-4": {
+      "bildflode\\": "src/"
+        }
+    },
+    "require": {}
+}
