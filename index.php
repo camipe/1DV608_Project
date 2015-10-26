@@ -3,6 +3,7 @@
  * Autoloading classes with composer https://getcomposer.org/doc/00-intro.md
  */
 require_once __DIR__ .'/vendor/autoload.php';
+include_once("Settings.php");
 
 $mainController = new bildflode\controller\MainController();
 $htmlView = new bildflode\view\HTMLView();
