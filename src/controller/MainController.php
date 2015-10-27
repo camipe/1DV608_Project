@@ -18,8 +18,17 @@ class MainController
 	public function run()
 	{
 		if ($this->uploadView->wantsToUpload()) {
-			$raw = $this->uploadView->getRawUpload();
-			$this->imageUploader->upload($raw);
+			$upload = $this->uploadView->getFileUpload();
+			if (is_null($upload) == false) {
+				try {
+					$this->imageUploader->upload($upload);
+					$this->uploadView->redirect();
+				} catch (\bildflode\model\InvalidImageTypeException $e) {
+					$this->uploadView->setInvalidFile();
+				}
+
+
+			}
 		}
 		return $this->uploadView->createForm();
 	}
