@@ -60,3 +60,8 @@ Fyll i Settings.php.default och döp om den till Settings.php.
 
 ## Testfall
 Se mappen "Test" i repon.
+
+## Potentiella förbättringar
+* Paginering: Sidan kommer bli väldigt tungjobbad ju fler bilder som laddas upp.
+* Geo-location baserat: Visa bara bilder i som laddats upp nära användaren.
+* Beskära bilderna till den storleken som de ska visas upp i för att spara utrymme och bandbredd.
