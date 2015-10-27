@@ -2,14 +2,12 @@
 form {
 	max-width: 600px;
 	margin: auto;
-
 }
 
 img {
 	display: block;
 	max-width: 600px;
 	margin: auto;
-
 }
 
 .header {
@@ -44,5 +42,4 @@ img {
 .feed-element {
 	width: 100%;
 	padding: 2em 0;
-
 }

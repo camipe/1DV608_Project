@@ -40,6 +40,14 @@ class UploadView
 		return null;
 	}
 
+	public function getDescription()
+	{
+		if (isset($_POST[self::$description])) {
+			return htmlspecialchars($_POST[self::$description]);
+		}
+		return '';
+	}
+
 	public function setInvalidFile()
 	{
 		$this->message = "File type is invalid. Must be .jpeg or .gif.";

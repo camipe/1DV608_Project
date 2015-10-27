@@ -22,9 +22,10 @@ class MainController
 	{
 		if ($this->uploadView->wantsToUpload()) {
 			$upload = $this->uploadView->getFileUpload();
+			$description = $this->uploadView->getDescription();
 			if (is_null($upload) == false) {
 				try {
-					$this->imageUploader->upload($upload);
+					$this->imageUploader->upload($upload, $description);
 					$this->uploadView->redirect();
 				} catch (\bildflode\model\InvalidImageTypeException $e) {
 					$this->uploadView->setInvalidFile();
