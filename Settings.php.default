@@ -1,0 +1,12 @@
+<?php
+
+class Settings{
+
+    // Change these to access your database
+    const DSN = '';
+    const DATABASE = '';
+    const DB_USERNAME = '';
+    const DB_PASSWORD = '';
+    const IMAGEFOLDER = '';
+    const MAX_FILE_SIZE = 0;
+}

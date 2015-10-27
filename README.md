@@ -23,6 +23,8 @@ För att köra applikationen krävs följande:
   4. extension varchar 5 (Tillåt null)
 * En folder att spara de fysiska bildfilerna i.
 
+Fyll i Settings.php.default och döp om den till Settings.php.
+
 ## Användarfall
 
 ### UC1 Ladda upp en bild
