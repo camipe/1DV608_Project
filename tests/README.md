@@ -18,16 +18,19 @@ Kontrollera så en bild kan laddas upp.
 ### Input:
 * Välj en bild att ladda upp.
 * Klicka på "Upload".
+
 ### Output:
 * Sidan laddas om.
 * Den uppladdade bilden visas högst upp i flödet.
 
 ## Testfall 1.3, Ladda upp bild med beskrivning
 Kontrollera så att det går att ladda upp en bild med en tillhörande beskrivning.
+
 ### Input:
 * Välj en bild att ladda upp.
 * Fyll i en kort beskrivning i rutan "Description".
 * Klicka på "Upload".
+
 ### Output:
 * Sidan laddas om.
 * Den uppladdade bilden visas högst upp i flödet.
@@ -39,6 +42,7 @@ Kontrollera så att ett felmeddelande presenteras om användaren inte väljer en
 ### Input:
 * Lämna fälten tomma.
 * Klicka på knappen "Upload".
+
 ### Output:
 * Felmeddelandet "File field can not be empty. Please select a file." visas.
 
@@ -48,15 +52,18 @@ Kontrollera så det bara går att ladda upp filer av typen .jpeg eller .gif.
 ### Input:
 * Välj en fil av ogiltig typ.
 * Klicka på "Upload".
+
 ### Output:
 * Felmeddelandet "File type is invalid. Must be .jpeg or .gif." visas och det filen laddas inte upp. (Svårt att se utan att kolla databasen.)
 
 ## Testfall 1.6, Ladda upp en bild med script-taggar i beskrivningen
 Kontrollera så att script-taggar inte körs.
+
 ### Input:
 * Välj en bild.
 * Fyll i <script>alert("Farligt!")</script> i description.
 * Klicka på "Upload".
+
 ### Output:
 * Sidan laddas om.
 * Bilden högst upp i flödet.

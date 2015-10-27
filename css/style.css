@@ -32,7 +32,14 @@ img {
 
 .desc-container {
 	max-width: 600px;
-	margin: 2em auto;
+	margin: 1.4em auto 0;
+	text-align: center;
+}
+
+.desc-container p {
+	display: inline-block;
+	max-width: 50%;
+	margin-bottom: 0;
 }
 
 .feed div:nth-child(odd){

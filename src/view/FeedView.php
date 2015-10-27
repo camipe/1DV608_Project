@@ -30,7 +30,7 @@ class FeedView
 	 */
 	private function getDescriptionTag(Image $image)
 	{
-		return '<blockquote><p>' . $image->getDescription() . '</p></blockquote>';
+		return '<p>' . $image->getDescription() . '</p>';
 
 	}
 	/**
