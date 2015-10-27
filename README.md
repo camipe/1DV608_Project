@@ -8,12 +8,20 @@ Min vision för projektet var att skapa en anonym bilduppladningssida där alla 
 2. Användare ska kunna ladda upp egna bilder.
 3. Bilder kan ha korta textbeskrivningar (frivilligt).
 
-###3 Säkerhet
+### Säkerhet
 
 1. Bilder ska valideras innan de laddas upp.
 2. Bildbeskrivningar ska saniteras innan de laddas upp.
 
 ## Instruktioner
+För att köra applikationen krävs följande:
+* Composer för att autoloada klasser.
+* MySQL server med en tabell som heter "image" med följande fält
+  1. id int (Auto increment)
+  2. name char 40 (Tillåt inte null)
+  3. description varchar 140 (Tillåt null)
+  4. extension varchar 5 (Tillåt null)
+ * En folder att spara de fysiska bildfilerna i.
 
 ## Användarfall
 
@@ -26,7 +34,7 @@ Min vision för projektet var att skapa en anonym bilduppladningssida där alla 
 
 #### Alternativt scenario
 * 3a. Något går fel under uppladdningen.
-..1. Användaren får ett meddelande om att något gått fel och eventuellt hur den kan åtgärda felet.
+  1. Användaren får ett meddelande om att något gått fel och eventuellt hur den kan åtgärda felet.
 
 ### UC2 Ladda upp en bild med en beskrivning
 #### Huvudscenario
@@ -37,7 +45,7 @@ Min vision för projektet var att skapa en anonym bilduppladningssida där alla 
 
 #### Alternativt scenario
 * 3a. Något går fel under uppladdningen.
-..1. Användaren får ett meddelande om att något gått fel och eventuellt hur den kan åtgärda felet.
+  1. Användaren får ett meddelande om att något gått fel och eventuellt hur den kan åtgärda felet.
 
 ### UC3 Se bilder som laddas upp
 #### Huvudscenario
@@ -46,4 +54,7 @@ Min vision för projektet var att skapa en anonym bilduppladningssida där alla 
 
 #### Alternativt scenario
 * 2a. Det finns inga uppladdade bilder.
-..1. Användaren går till UC1 eller UC2.
+  1. Användaren går till UC1 eller UC2.
+
+## Testfall
+Se mappen "Test" i repon.
