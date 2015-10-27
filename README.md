@@ -21,7 +21,7 @@ För att köra applikationen krävs följande:
   2. name char 40 (Tillåt inte null)
   3. description varchar 140 (Tillåt null)
   4. extension varchar 5 (Tillåt null)
- * En folder att spara de fysiska bildfilerna i.
+* En folder att spara de fysiska bildfilerna i.
 
 ## Användarfall
 
