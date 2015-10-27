@@ -43,9 +43,8 @@ class ImageUploader
 	public function upload(FileUpload $file, $description = null)
 	{
 		$newFilename = sha1_file($file->getTempName()) . '.' . $file->getExtension();
-
 		try {
-			$image = new Image($newFilename, $description);
+			$image = new Image($newFilename, $description, $file->getExtension());
 		} catch (Exception $e) {
 			throw $e;
 		}

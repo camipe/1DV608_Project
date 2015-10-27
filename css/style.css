@@ -1,0 +1,48 @@
+
+form {
+	max-width: 600px;
+	margin: auto;
+
+}
+
+img {
+	display: block;
+	max-width: 600px;
+	margin: auto;
+
+}
+
+.header {
+	height: 5em;
+	width: 100%;
+	text-align: center;
+	background-color: #FFA500;
+}
+.header h1 {
+	margin: 0;
+	padding-top: 0.3em;
+}
+
+.container-fluid {
+	padding: 0;
+	padding:
+}
+
+.form-container {
+	margin: 2em;
+}
+
+.desc-container {
+	max-width: 600px;
+	margin: 2em auto;
+}
+
+.feed div:nth-child(odd){
+	background-color: #D3D3D3;
+}
+
+.feed-element {
+	width: 100%;
+	padding: 2em 0;
+
+}

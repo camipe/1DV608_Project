@@ -8,8 +8,9 @@ use bildflode\model\FileUpload;
 class UploadView
 {
 	private static $file = 'UploadView::File';
+	private static $description = 'UploadView::Description';
 	private static $upload = 'UploadView::Upload';
-	private static $messageID = "RegisterView::Message";
+	private static $messageID = 'RegisterView::Message';
 
 	private static $sessionSaveLocation = "\\view\\message";
 
@@ -47,12 +48,20 @@ class UploadView
 	public function createForm()
 	{
 		$formHTML = "
-            <form method='post' enctype='multipart/form-data'>
-				<p id='".self::$messageID."'>" . $this->message . "</p>
-              	<label for='" . self::$file . "' >Image :</label>
-              	<input type='file' name='" . self::$file . "' id='" . self::$file . "' value='' />
-              	<input id='' type='submit' name='" . self::$upload . "'  value='Upload' />
-			</form>";
+		<div class='form-container'>
+            <form method='post' enctype='multipart/form-data' class='upload-form'>
+				<p id='" .self::$messageID. "'>" . $this->message . "</p>
+				<div class='form-group'>
+              		<label for='" . self::$file . "' >Upload an image</label>
+              		<input type='file' name='" . self::$file . "' id='" . self::$file . "' value='' />
+				</div>
+				<div class='form-group'>
+              		<label for='" . self::$description . "' >Add an optional description</label>
+              		<input type='text' name='" . self::$description . "' class='form-control' id='" . self::$description . "' value='' />
+				</div>
+				<input id='' type='submit' name='" . self::$upload . "' class='btn btn-default'  value='Upload' />
+			</form>
+		</div>";
 
 		return $formHTML;
     }

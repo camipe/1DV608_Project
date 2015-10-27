@@ -17,19 +17,19 @@ class ImageDAL
 
 	public function save(Image $image)
 	{
-		$stmt = $this->connection->prepare('INSERT INTO image (name, description) VALUE (?,?)');
-    	$stmt->execute(array($image->getName(), $image->getDescription()));
+		$stmt = $this->connection->prepare('INSERT INTO image (name, description, extension) VALUE (?,?,?)');
+    	$stmt->execute(array($image->getName(), $image->getDescription(), $image->getExtension()));
 	}
 
 	public function getAll()
 	{
 		$images = array();
 
-		$stmt = $this->connection->prepare('SELECT * FROM image ORDER BY id');
+		$stmt = $this->connection->prepare('SELECT * FROM image ORDER BY id DESC');
 		$stmt->execute();
 
 		while ($image = $stmt->fetchObject()) {
-			$images[] = new Image($image->name, $image->description);
+			$images[] = new Image($image->name, $image->description, $image->extension);
 		}
 
 		return $images;
