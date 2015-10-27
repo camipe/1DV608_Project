@@ -2,16 +2,19 @@
 namespace bildflode\controller;
 
 use bildflode\view\UploadView;
+use bildflode\view\FeedView;
 use bildflode\model\ImageUploader;
 
 class MainController
 {
 	private $uploadView;
+	private $feedView;
 	private $imageUploader;
 
 	public function __construct()
 	{
 		$this->uploadView = new UploadView();
+		$this->feedView = new FeedView();
 		$this->imageUploader = new ImageUploader();
 	}
 
@@ -26,10 +29,12 @@ class MainController
 				} catch (\bildflode\model\InvalidImageTypeException $e) {
 					$this->uploadView->setInvalidFile();
 				}
-
-
 			}
 		}
-		return $this->uploadView->createForm();
+		$html = $this->uploadView->createForm();
+
+		$html .= $this->feedView->render();
+
+		return $html;
 	}
 }

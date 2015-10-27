@@ -20,4 +20,18 @@ class ImageDAL
 		$stmt = $this->connection->prepare('INSERT INTO image (name, description) VALUE (?,?)');
     	$stmt->execute(array($image->getName(), $image->getDescription()));
 	}
+
+	public function getAll()
+	{
+		$images = array();
+
+		$stmt = $this->connection->prepare('SELECT * FROM image ORDER BY id');
+		$stmt->execute();
+
+		while ($image = $stmt->fetchObject()) {
+			$images[] = new Image($image->name, $image->description);
+		}
+
+		return $images;
+	}
 }
