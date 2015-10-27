@@ -14,6 +14,12 @@ class FileUpload
 	private $size;
 	private $tempName;
 
+	/**
+	 * Takes a file upload array ($_FILES) and saves the different
+	 * elements to private variables.
+	 * Also runs some validation.
+	 * @param Array $file
+	 */
 	public function __construct(Array $file)
 	{
 		// Check if upload is empty
@@ -36,26 +42,45 @@ class FileUpload
 		$this->tempName = $file['tmp_name'];
 	}
 
+	/**
+	 * Returns the name of the uploaded file.
+	 * @return [string]
+	 */
 	public function getName()
 	{
 		return $this->name;
 	}
 
+	/**
+	 * Returns the MIME type of the uploaded file.
+	 * @return string
+	 */
 	public function getType()
 	{
 		return $this->name;
 	}
 
+	/**
+	 * Returns the file extension of the uploaded file.
+	 * @return string
+	 */
 	public function getExtension()
 	{
 		return $this->extension;
 	}
 
+	/**
+	 * Returns the size of the uploaded file in bytes.
+	 * @return int
+	 */
 	public function getSize()
 	{
 		return $this->type;
 	}
-
+	/**
+	 * Returns the path where the uploaded file is temporarily saved.
+	 * @return string
+	 */
 	public function getTempName()
 	{
 		return $this->tempName;

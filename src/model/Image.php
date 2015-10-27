@@ -18,26 +18,28 @@ class Image
 		$this->extension = $extension;
 	}
 
+	/**
+	 * Returns the image name.
+	 * @return string
+	 */
 	public function getName()
 	{
 		return $this->name;
 	}
 
-	public function setName($name)
-	{
-		$this->name = $name;
-	}
-
+	/**
+	 * Returns the image description.
+	 * @return string
+	 */
 	public function getDescription()
 	{
 		return $this->description;
 	}
 
-	public function setDescription($description)
-	{
-		$this->description = $description;
-	}
-
+	/**
+	 * Returns the image file extension.
+	 * @return string 
+	 */
 	public function getExtension()
 	{
 		return $this->extension;

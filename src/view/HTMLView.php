@@ -3,6 +3,11 @@ namespace bildflode\view;
 
 class HTMLView
 {
+    /**
+     * Renders the page
+     * @param  string $body Main body of the page
+     * @return void
+     */
     public function render($body){
         echo '
 <!DOCTYPE html>
