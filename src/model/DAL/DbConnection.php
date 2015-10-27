@@ -2,18 +2,23 @@
 
 namespace bildflode\model\DAL;
 
-abstract class DbConnection
+class DbConnection
 {
-    protected $db;
+    private $connection;
 
     public function __construct(){
         try{
-            $this->db = new \PDO('mysql:host=' . \Settings::DSN . ';dbname=' . \Settings::DATABASE . ';',
+            $this->connection = new \PDO('mysql:host=' . \Settings::DSN . ';dbname=' . \Settings::DATABASE . ';',
 			 			\Settings::DB_USERNAME,
 						\Settings::DB_PASSWORD);
-            $this->db->SetAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $this->connection->SetAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }catch(\Exception $e){
             throw $e;
         }
+    }
+
+    public function getConnection()
+    {
+        return $this->connection;
     }
 }

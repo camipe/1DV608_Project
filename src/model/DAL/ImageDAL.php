@@ -3,12 +3,21 @@
 namespace bildflode\model\DAL;
 
 use bildflode\model\Image;
+use bildflode\model\DAL\DbConnection;
 
-class ImageDAL extends DbConnection
+class ImageDAL
 {
+	private $connection;
+
+	public function __construct()
+	{
+		$conn = new DbConnection();
+		$this->connection = $conn->getConnection();
+	}
+
 	public function save(Image $image)
 	{
-		$stmt = $this->db->prepare('INSERT INTO image (name, description) VALUE (?,?)');
+		$stmt = $this->connection->prepare('INSERT INTO image (name, description) VALUE (?,?)');
     	$stmt->execute(array($image->getName(), $image->getDescription()));
 	}
 }
